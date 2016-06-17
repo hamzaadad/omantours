@@ -1,0 +1,21 @@
+<ion-pane>
+  <ion-content>
+    <div class="logo-big logo-mid text-shadow">
+      <div class="top">{{'oman' | uppercase}}</div>
+      <div class="bottom">T<span>OURISM</span></div>
+    </div>
+<br>
+    <h4 class="title">Personal informations</h4>
+    <input type="text" name="name" value="" ng-model="tourist.fullname" placeholder="Name" required>
+    <input type="tel" name="phone" value="" ng-model="tourist.phone" placeholder="Phone"  required>
+    <input type="email" name="email" value="" ng-model="tourist.email" placeholder="email" required>
+    <select ng-model="tourist.country" ng-options="item.code as item.name for item in allCountries" required>
+        <option value="">Select Country</option>
+    </select>
+    <input type="text" name="escort" value="" ng-model="tourist.escorts" placeholder="escort" required>
+    <h4 class="title secend">Trip informations</h4>
+    <input type="date" name="from" value="" ng-model="tourist.from" required>
+    <input type="date" name="from" value="" ng-model="tourist.to" required>
+    <button class="button center sign" type="button" name="button" ng-click="saveTourist(tourist)">Sign-Up</button>
+  </ion-content>
+</ion-pane>

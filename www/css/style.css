@@ -1,0 +1,148 @@
+/* Empty. Add your own CSS if you like */
+*{
+  font-family: 'bariol_regularregular';
+}
+.view-content {
+  background-image: url('../img/bg.png');
+  background-size: cover;
+}
+
+.pane {
+  background-image: url('../img/bg.png') !important;
+  background-size: cover !important;
+}
+
+.logo{
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-top:30%;
+}
+.logo-big{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  line-height: 38px;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+.logo-mid{
+  margin-top: 8%!important;
+  margin-bottom: 5%!important;
+}
+.logo-big > .top{
+  font-size: 50px;
+  margin-left: -37px
+}
+.logo-big > .bottom > span{
+  font-size: 70px;
+}
+.splash-map{
+  width: 100px;
+height: 100px;
+margin-left: 37.5%;
+margin-top: 8%;
+text-align: center;
+color: white;
+text-transform: uppercase;
+background: url('../img/big-icons/map.png') no-repeat;
+background-size: 100% 100%;
+line-height: 95px;
+font-size: 20px;
+text-shadow: 0px 3px 2px rgba(32, 72, 83, 0.35);
+/*-webkit-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+-moz-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);*/
+}
+
+.states{
+  margin-top: 8%;
+  width: 100%;
+  text-align: center;
+  color:white;
+  font-size: 20px;
+}
+.text-shadow{
+  text-shadow: 0px 3px 2px rgba(32, 72, 83, 0.8);
+}
+.btn-container{
+
+  margin-top: 20%;
+
+}
+.center{
+  margin-left: 25% !important;
+}
+.button{
+  margin-left: 4%;
+  text-shadow: 0px 3px 2px rgba(32, 72, 83, 0.35);
+  background: rgba(55,203,198,.7);
+  border: none;
+  border-radius: 6px;
+  width: 44%;
+  line-height: 36px;
+  color: white;
+  -webkit-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+  -moz-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+  box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+}
+
+.lang{
+  color: white;
+    font-size: 16px;
+    margin-top: 8%;
+    width: 100%;
+    text-align: center;
+}
+.full-lang{
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 20%;
+}
+
+.title{
+  color:white;
+  padding: 10px;
+  padding-top:5px;
+}
+
+}
+.secend{
+    margin-top: 20px !important;
+}
+input, select{
+  background: transparent;
+  border:none;
+  color:rgba(255,255,255,.8) !important;
+  border-bottom: 1px solid rgba(255,255,255,.8) !important;
+  width: 90%;
+  margin-left: 5%;
+  height: 40px !important;
+}
+
+.sign{
+  margin-top: 20px;
+}
+/* animation */
+
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 200ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 100ms;
+}

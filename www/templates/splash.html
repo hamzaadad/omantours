@@ -1,0 +1,26 @@
+<ion-pane>
+  <ion-content scroll="false">
+    <div class="logo-big text-shadow">
+      <div class="top">{{'oman' | uppercase}}</div>
+      <div class="bottom">T<span>OURISM</span></div>
+    </div>
+    <div class="splash-map"  ng-click="go('map')" ng-cloak>{{maptext}}</div>
+    <div class="states text-shadow">
+      <div class="">
+        {{usersCount}} {{tourist | capitalize}}
+      </div>
+      <div class="">
+        {{companiesCount}} {{company | capitalize}}
+      </div>
+    </div>
+    <div class="btn-container">
+      <button class="button text-shadow" type="button" name="button" ng-click="go('touristSignUp')">{{tourist | capitalize}}</button>
+      <button class="button text-shadow"  type="button" name="button" ng-click="go('companySingUp')">{{company | capitalize}}</button>
+    </div>
+    <div class="lang text-shadow" ng-click="toggleLangSelector()">{{language | uppercase}} : {{selectedlanguage | uppercase}}</div>
+
+  </ion-content>
+  <div class="full-lang fade" ng-show="isfulllang">
+    <div class="" ng-repeat="lang in languages" ng-click="selectlanguage(lang)">{{lang.name | uppercase}}<hrs></div>
+  </div>
+</ion-pane>
