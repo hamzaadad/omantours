@@ -2,7 +2,6 @@ app
 .controller("MapController", function($scope, $stateParams, $state, $http, $ionicLoading, $ionicHistory, $cordovaGeolocation, ApiFactory, LocalFactory) {
   $ionicLoading.show();
   $scope.back = function(){
-    console.log('ok');
      $ionicHistory.goBack()
   }
 
@@ -10,14 +9,12 @@ app
  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
 
    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-   alert(latLng);
-   var mapOptions = {
+
+   $scope.map = new google.maps.Map(document.getElementById("map"), {
      center: latLng,
      zoom: 15,
      mapTypeId: google.maps.MapTypeId.ROADMAP
-   };
-
-   $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+   });
    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
      var marker = new google.maps.Marker({
          map: $scope.map,
