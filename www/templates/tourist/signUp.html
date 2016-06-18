@@ -1,23 +1,39 @@
 <ion-pane>
-  <ion-content>
+  <ion-content scroll="false">
     <div class="logo-big logo-mid text-shadow">
       <div class="top">{{'oman' | uppercase}}</div>
       <div class="bottom">T<span>OURISM</span></div>
     </div>
 <br>
-    <h4 class="title">Personal informations</h4>
-    <input type="text" name="name" value="" ng-model="tourist.fullname" placeholder="Name" required>
-    <input type="tel" name="phone" value="" ng-model="tourist.phone" placeholder="Phone"  required>
-    <input type="email" name="email" value="" ng-model="tourist.email" placeholder="email" required>
+    <h4 class="title">{{ perosnal | capitalize}}</h4>
+    <input type="text" name="name" value="" ng-model="tourist.fullname" placeholder="{{placeholder.name | capitalize}}" required>
+    <input type="tel" name="phone" value="" ng-model="tourist.phone" placeholder="{{placeholder.phone | capitalize}}"  required>
+    <input type="email" name="email" value="" ng-model="tourist.email" placeholder="{{placeholder.email | capitalize}}" required>
     <select ng-model="tourist.country" ng-options="item.code as item.name for item in allCountries" required>
-        <option value="">Select Country</option>
+        <option value="">{{ placeholder.country  }}</option>
     </select>
     <input type="text" name="escort" value="" ng-model="tourist.escorts" placeholder="escort" required>
-    <h4 class="title secend">Trip informations</h4>
+    <h4 class="title secend">{{ trip | capitalize}}</h4>
+    <label for="">{{placeholder.from | capitalize}}</label>
     <input type="date" name="from" value="" ng-model="tourist.from" required>
+    <label for="">{{placeholder.to | capitalize}}</label>
     <input type="date" name="from" value="" ng-model="tourist.to" required>
-    <button class="button center sign" type="button" name="button" ng-click="saveTourist(tourist)">Sign-Up</button>
-    <br>
-    <a href="" ng-click="go('mainTourist')" style="text-align:center">Skip</a>
+
+    <div class="row">
+      <div class="col-10"></div>
+      <div class="col-20"></div>
+      <div class="col-40">
+        <button class="button sign" type="button" name="button" ng-click="saveTourist(tourist)">{{signup}}</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10"></div>
+      <div class="col-20"></div>
+      <div class="col-40" style="text-align: center;">
+        <a class="skipbtn" href="" ng-click="go('towns')" style="text-align:center">{{skip | capitalize}}</a>
+      </div>
+    </div>
+
+    <!--a href="tel:+1-1800-555-5555" class="button button-positive">Call me</a-->
   </ion-content>
 </ion-pane>

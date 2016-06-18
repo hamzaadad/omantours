@@ -27,8 +27,6 @@ app
     $ionicLoading.show();
     ApiFactory.getLanguage(name).then(function(resp){
       LocalFactory.setLanguage(resp.data);
-
-      console.log("api", resp.data[0]);
       $scope.formateLange(resp.data[0]);
       $ionicLoading.hide();
     }, function(err){
@@ -37,12 +35,10 @@ app
   }
   ApiFactory.getLanguages().then(function(resp){
     $scope.languages = resp.data;
-
   },function(err){
     console.log(err);
   })
   if(!LocalFactory.getLanguage()){
-    console.log("in changeing language");
     $scope.changelanguage("eng");
   }else{
     $ionicLoading.hide();
