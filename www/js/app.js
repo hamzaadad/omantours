@@ -56,17 +56,30 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
 .directive("townlist",function($rootScope, $state, ApiFactory) {
    return {
      restrict: 'E',
-     template: '<select ng-model="selectedTown" ng-change="selectTown(selectedTown)" ng-options="item.id as item.name for item in allTowns" required><option value="">Select Town</option></select>',
-     controller: function($scope, $state, $rootScope) {
-       $scope.selectTown = $rootScope.currentTown;
+     //template: '<select ng-model="selectedTown" ng-change="selectTown(selectedTown)" ng-options="item for item in allTowns" required><option value="">Select Town</option></select>',
+     templateUrl: 'templates/directives/townlist.html',
+     controller: function($scope, $state, $rootScope, $ionicScrollDelegate) {
+       //$scope.selectTown = $rootScope.currentTown;
+       $scope.fulllisttown = false;
+       $scope.showList = function(){
+         console.log("ok");
+         $scope.fulllisttown = true;
+         //scope.$apply();
+       }
+        $scope.selectedTown = 'Select a towns'
         ApiFactory.getTowns().then(function(resp){
-        $scope.allTowns = resp.data;
-        $scope.selectedTown = $scope.allTowns.length > 0 ? $scope.allTowns[0] : undefined;
+         $scope.allTowns = resp.data[0].data;
        }, function(err){ console.log(err);});
        $scope.selectTown = function(item){
-          $rootScope.currentTown = {id:item, name: $scope.allTowns.filter(function(elm){return elm.id == item})[0].name}
-          $state.go("town", $rootScope.currentTown )
+          $rootScope.currentTown = item;
+          $scope.selectedTown = item;
+          $scope.fulllisttown = false;
+          $ionicScrollDelegate.scrollTop();
+          //$state.go("town", item )
        }
+     },
+     link: function(scope){
+
      }
    }
  })

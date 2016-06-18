@@ -1,6 +1,7 @@
 app
 .controller("TouristSignUpController", function($scope, $stateParams, $state, $http, $ionicLoading, $ionicPopup, ApiFactory, LocalFactory) {
   //$ionicLoading.show();
+  $scope.full_name = LocalFactory.getUser()['first_name'];
   $scope.go = function(state){
     $state.go(state);
   }

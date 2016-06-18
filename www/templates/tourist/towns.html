@@ -1,9 +1,25 @@
+
 <ion-pane>
   <ion-content>
-    <h1>Welcom</h1>
-    <h1>{{full_name}}</h1>
-    <h3>Please select you disered town below</h3>
-    <townlist></townlist>
+    <img class="small-logo" src="img/big-logo.png" width="80" alt="" />
+    <div class="towns">
+      <div class="row">
+        <div class="title">{{welcom | capitalize}}</div>
+      </div>
+      <div class="row">
+        <div class="title">{{full_name}}</div>
+      </div>
+      <div class="row">
+        <div class="title2">
+           {{slogon | capitalize }}
+        </div>
 
+      </div>
+      <div class="row">
+        <div class="title listTowns">
+          <townlist></townlist>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-pane>
