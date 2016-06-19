@@ -1,5 +1,6 @@
 app
-.controller("TownsController", function($scope, $stateParams, $state, $stateParams, ApiFactory, LocalFactory) {
+.controller("TownsController", function($scope, $stateParams, $state, $stateParams, $ionicLoading, ApiFactory, LocalFactory) {
+$ionicLoading.show();
   $scope.full_name = LocalFactory.getUser()["first_name"];
   $scope.go = function(state, params){
     $state.go(state);
