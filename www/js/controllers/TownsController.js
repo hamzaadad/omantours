@@ -6,11 +6,9 @@ $ionicLoading.show();
     $state.go(state);
   }
   $scope.formateLange = function(langdata){
-     $scope.welcom = langdata.data.tourist.towns.welcom;
-     $scope.slogon = langdata.data.tourist.towns.slogon;
-     /*$scope.signup = langdata.data.tourist.signUp.signup;
-     $scope.skip = langdata.data.tourist.signUp.skip;
-     $scope.placeholder = langdata.data.tourist.signUp.placeholders;*/
+    console.log(langdata.data);
+     $scope.welcom = langdata.data.towns.welcom;
+     $scope.slogon = langdata.data.towns.slogon;
    }
 
    $scope.changelanguage = function(name){
@@ -26,10 +24,10 @@ $ionicLoading.show();
    }
 
    if(!LocalFactory.getLanguage()){
-     console.log("in changeing language");
      $scope.changelanguage("eng");
    }else{
      $scope.formateLange(LocalFactory.getLanguage()[0]);
+     $ionicLoading.hide();
    }
    var langData = LocalFactory.getData('countries');
    if(!langData){
