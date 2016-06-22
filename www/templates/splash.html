@@ -13,9 +13,10 @@
         {{companiesCount}} {{company | capitalize}}
       </div>
     </div>
-    <div class="btn-container">
-      <button class="button text-shadow" type="button" name="button" ng-click="go('touristSignUp')">{{tourist | capitalize}}</button>
-      <button class="button text-shadow"  type="button" name="button" ng-click="go('companySingUp')">{{company | capitalize}}</button>
+    <div class="btn-container row">
+      <button class="button text-shadow col-50" type="button" name="button" ng-click="go('touristSignUp')">{{tourist | capitalize}}</button>
+      	&nbsp;&nbsp;
+      <button class="button text-shadow col-50"  type="button" name="button" ng-click="go('companySingUp')">{{company | capitalize}}</button>
     </div>
     <div class="lang text-shadow" ng-click="toggleLangSelector()">{{language | uppercase}} : {{selectedlanguage | uppercase}}</div>
 

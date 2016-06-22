@@ -1,6 +1,6 @@
-<div class="selectedTown" ng-click="showList()">{{selectedTown}} <i class="ion-android-arrow-dropdown-circle" style="line-height: 60px;vertical-align: text-top;"></i></div>
+<div class="selectedTown" ng-click="showList()">{{selectedTown}} <i class="ion-android-arrow-dropdown-circle" style="vertical-align: text-top;"></i></div>
 <div class="townlist-holder" ng-show="fulllisttown">
-  <div class="townlist-item" ng-repeat="item in allTowns" ng-click="selectTown(item)">
+  <div class="townlist-item" style="color:white;text-align:center;line-height: 50px;" ng-repeat="item in allTowns" ng-click="selectTown(item)">
     {{item}}
   </div>
 </div>

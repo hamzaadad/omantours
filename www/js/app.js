@@ -37,7 +37,7 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
                controller: 'TownController',
                resolve:{
                  allTownImages: function(ApiFactory){
-                   return ApiFactory.getImages("547654765", "town");
+                   //return ApiFactory.getImages("547654765", "town");
                  }
                },
                params: {
@@ -75,11 +75,9 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
           $scope.selectedTown = item;
           $scope.fulllisttown = false;
           $ionicScrollDelegate.scrollTop();
-          //$state.go("town", item )
+          console.log(item);
+          $state.go("town", {id:null, name:item})
        }
-     },
-     link: function(scope){
-
      }
    }
  })

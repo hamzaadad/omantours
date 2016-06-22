@@ -6,16 +6,17 @@ app
     $state.go(state);
   }
   if(!$stateParams.hasOwnProperty("id") || !$stateParams.hasOwnProperty("name") || $stateParams.id == null ){
-    $state.go('towns');
-    return;
+    //$state.go('towns');
+    //return;
   }
   $ionicLoading.show({
     template: 'Loading...'
   }).then(function(){
     console.log("The loading indicator is now displayed");
   });
-  $scope.townname = $stateParams.name;
-  $scope.images=  allTownImages.data[0].images[1].data;
+  console.log($stateParams);
+  $scope.town_name = $stateParams.name;
+  //$scope.images=  allTownImages.data[0].images[1].data;
 
   $ionicLoading.hide();
 });

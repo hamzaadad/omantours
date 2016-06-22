@@ -6,7 +6,6 @@ $ionicLoading.show();
     $state.go(state);
   }
   $scope.formateLange = function(langdata){
-    console.log(langdata.data);
      $scope.welcom = langdata.data.towns.welcom;
      $scope.slogon = langdata.data.towns.slogon;
    }
