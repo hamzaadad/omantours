@@ -237,14 +237,39 @@ input, select{
 }
 .town{
   background: url(../img/town-header.png);
+  background-position-x: 100%;
+  background-size: cover;
   color:white;
 }
 .town-name{
   font-size: xx-large;
 }
 .town .row{
-  line-height: 50px;
+  /*line-height: 50px;*/
 }
 .icon-big-row{
   text-align: center;
+}
+.big-icon{
+  width: calc(100% / 3);
+
+}
+.big-icon > img{
+  height: 70px;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.near-by > img{
+  width: 20px;
+  height: 20px;
+}
+
+figure > img{
+  height: 60px;
+}
+.scroll-bar-indicator
+{
+	display: block;
 }
