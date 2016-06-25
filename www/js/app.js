@@ -14,6 +14,9 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
     }
   });
 })
+.constant('ApiEndpoint', {
+  url: 'http://localhost:8100'
+})
 .config(function($stateProvider, $urlRouterProvider) {
        $stateProvider
            .state('splash', {
@@ -81,6 +84,19 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
      }
    }
  })
+ .directive('ngFiles', ['$parse', function ($parse) {
+
+            function fn_link(scope, element, attrs) {
+                var onChange = $parse(attrs.ngFiles);
+                element.on('change', function (event) {
+                    onChange(scope, { $files: event.target.files });
+                });
+            };
+
+            return {
+                link: fn_link
+            }
+        } ])
  .filter('capitalize', function() {
     return function(input) {
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';

@@ -1,6 +1,6 @@
 var globalConfig = {
-  "api":"https://pure-shelf-72731.herokuapp.com/",
-  //"api":"http://localhost:5000/",
+  //"api":"https://pure-shelf-72731.herokuapp.com/",
+  "api":"http://localhost:5000/",
   "uris":{
     "states": "states",
     "users":"users",
