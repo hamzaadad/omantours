@@ -54,7 +54,7 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
              controller:'MapController'
            })
            .state('category', {
-             url:'category',
+             url:'/category',
              templateUrl:'templates/tourist/category.html',
              controller:'CategoryController',
              params:{name:null, id:null}
