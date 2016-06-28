@@ -52,6 +52,13 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
              url:'/map',
              templateUrl:'templates/tourist/map.html',
              controller:'MapController'
+           })
+           .state('category', {
+             url:'category',
+             templateUrl:'templates/tourist/category.html',
+             controller:'CategoryController',
+             params:{name:null, id:null}
+
            });
        $urlRouterProvider.otherwise('/splash');
    })

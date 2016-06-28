@@ -6,11 +6,14 @@ app
     $state.go(state);
   }
 
-
+$scope.town_name = $stateParams.name;
+  var cats = {
+    1:11,
+    2:22,
+    3:33
+  }
   $scope.formateLange = function(langdata){
-     $scope.welcom = langdata.data.town.welcom;
      $scope.lang = langdata.data.town;
-
    }
 
    $scope.changelanguage = function(name){
@@ -45,18 +48,14 @@ app
    }
 
 
-  if(!$stateParams.hasOwnProperty("id") || !$stateParams.hasOwnProperty("name") || $stateParams.id == null ){
-    //$state.go('towns');
-    //return;
-  }
-  $ionicLoading.show({
-    template: 'Loading...'
-  }).then(function(){
-    console.log("The loading indicator is now displayed");
-  });
-  console.log($stateParams);
-  $scope.town_name = $stateParams.name;
-  //$scope.images=  allTownImages.data[0].images[1].data;
-
-  $ionicLoading.hide();
+   $scope.cat = function(id){
+     console.log(cats[id]);
+     if(!id){
+       return;
+     }
+     $state.go('category', {
+       name:cats[id],
+       id:id
+     });
+   }
 });
